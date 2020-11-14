@@ -35,3 +35,16 @@ func NewClient(ctx context.Context, token string) *Client {
 
 	client := github.NewClient(tc)
 	return &Client{client}
+}
+
+func main(){
+	ctx := context.Background()
+
+	token, err := LookupAccessToken()
+	if err != nil{
+		log.Fatal()
+	}
+	client := 
+
+	client.
+}
