@@ -2,10 +2,9 @@ package main
 
 import (
 	"context"
-	"log"
 	"os"
 
-	"github.com/google/go-github/github" // with go modules disabled
+	"github.com/google/go-github/github"
 	"golang.org/x/oauth2"
 	"golang.org/x/xerrors"
 )
@@ -36,12 +35,3 @@ func NewClient(ctx context.Context, token string) *Client {
 
 	client := github.NewClient(tc)
 	return &Client{client}
-}
-
-func main() {
-	token, err := LookupAccessToken()
-	if err != nil {
-		log.Fatal(err)
-	}
-	NewClient()
-}
