@@ -12,5 +12,7 @@
 jq .items[].html_url < data.json > repos.json
 jq .items[].default_branch < data.json > branch.json
 
-# 2つのjsonをうまくがちゃっとくっつけていい感じのarchive.json作りたさある
+# 2つのデータのダブルクォート外す
 
+# 2つのjsonをうまくがちゃっとくっつけていい感じのarchive_url作りたさある
+paste repos.json branch.json > raw_archive_url
