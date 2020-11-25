@@ -33,8 +33,8 @@ fi
 while read line
 do
     # todo: ファイル名いい感じにする
-    FILENAME=
-    curl -O $line -o $NAME
+    FILENAME=`sed -r 's/https:\/\/github\.com\/(.*?)\/archive\/master\.zip/\1/g' < $line`
+    curl -O $line -o $FILENAME
 done < ../archive_url
 
 unzip *
